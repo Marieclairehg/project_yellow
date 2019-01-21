@@ -6,7 +6,7 @@ BIN_PATH = bin/
 EXEC_NAME = jeu
 INCLUDES =
 LIBS = -lSDL2 -lSDL2_image
-OBJ_FILES = Voiture.o main.o Artefact.o Bonus.o Vie.o
+OBJ_FILES = Voiture.o main.o Artefact.o Bonus.o Vie.o Cailloux.o Malus.o Trou.o
 
 all : $(addprefix $(BIN_PATH), $(EXEC_NAME))
 
