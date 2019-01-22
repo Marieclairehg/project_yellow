@@ -7,10 +7,16 @@ EXEC_NAME = jeu
 LIBS = -lSDL2 -lSDL2_image
 OBJ_FILES = Voiture.o main.o Artefact.o Bonus.o Vie.o Cailloux.o Malus.o Trou.o Piece.o Jeu.o
 
-all : $(addprefix $(BIN_PATH), $(EXEC_NAME))
+all : outDirs $(addprefix $(BIN_PATH), $(EXEC_NAME))
+
+outDirs:
+	mkdir -p $(OBJ_PATH)
+	mkdir -p $(BIN_PATH)
 
 clean :
 	rm $(addprefix $(BIN_PATH), $(EXEC_NAME)) $(addprefix $(OBJ_PATH), $(OBJ_FILES))
+	rm -r $(OBJ_PATH)
+	rm -r $(BIN_PATH)
 
 $(addprefix $(BIN_PATH), $(EXEC_NAME)) : $(addprefix $(OBJ_PATH), $(OBJ_FILES))
 	$(CC) $(CFLAGS) -o $(addprefix $(BIN_PATH), $(EXEC_NAME)) $(addprefix $(OBJ_PATH), $(OBJ_FILES)) $(LIBS)
