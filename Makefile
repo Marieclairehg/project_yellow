@@ -9,6 +9,8 @@ OBJ_FILES = Voiture.o main.o Artefact.o Bonus.o Vie.o Cailloux.o Malus.o Trou.o 
 
 all : outDirs $(addprefix $(BIN_PATH), $(EXEC_NAME))
 
+.PHONY: outDirs clean
+
 outDirs:
 	mkdir -p $(OBJ_PATH)
 	mkdir -p $(BIN_PATH)
