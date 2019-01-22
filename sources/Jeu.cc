@@ -12,7 +12,7 @@ Jeu::Jeu() : continuer(1), stop(0), nbVies(-1), screenSurface(NULL),
 	v1 = new Vie(500, 120);
 	c1 = new Cailloux(800, 165);
 	t1 = new Trou(500, 219);
-	p1 = new Piece(200, 200);
+	p1 = new Piece(400, 170);
 
 	boucleEvt();
 	quitSDL();

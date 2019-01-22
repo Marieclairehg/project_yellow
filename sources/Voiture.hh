@@ -15,6 +15,7 @@ class Voiture {
 		void stop();
 		bool isStopped();
 		void enableSaut();
+		void disableSaut();
 		void gestionSaut();
 		void gestionPiste(SDL_Surface *piste);
 	private:
