@@ -12,6 +12,7 @@ void Trou::interact(Voiture &v) {
 			((v.get_position()->y + v.get_position()->h) > Artefact::position.y) &&
 			(v.get_position()->y < (Artefact::position.y + Artefact::position.h))) {
 		v.set_vies(v.get_vies() - 1);
+    SDL_Delay(2000);
 		v.get_position()->x = 0;
 		v.get_position()->y = 255;
     v.disableSaut();

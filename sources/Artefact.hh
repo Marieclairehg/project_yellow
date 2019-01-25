@@ -7,6 +7,7 @@
 class Artefact {
 	public:
 		Artefact(int x, int y, char * img);
+		virtual ~Artefact() {};
 		SDL_Surface* get_surface();
 		void set_surface(SDL_Surface *a);
 		SDL_Rect* get_position();

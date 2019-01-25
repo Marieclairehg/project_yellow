@@ -87,11 +87,15 @@ void Voiture::gestionPiste(SDL_Surface *piste) {
 	px = pixels[(posVoiture.y + posVoiture.h - 3) * piste->w + (posVoiture.x + posVoiture.w - 10)];
 	Uint8 r, g, b;
 	SDL_GetRGB(px, fmt, &r, &g, &b);
-	//std::cout << "R : " << (int)r << " G : " << (int)g << " B : " << (int)b << std::endl;
 	if (!sautEnable && !stopped) {
 		if ((int)r == 47 && (int)g == 107 && (int)b == 47) { // coin bas avant = vert
 			v = IMG_Load("images/voiture.png");
-		} else if ((int)r == 49 && (int)g == 31 && (int)b == 31){ // coin bas avant = marron
+		} else if ((int)r == 49 && (int)g == 31 && (int)b == 31) { // coin bas avant = marron
+			px = pixels[(posVoiture.y - 3) * piste->w + (posVoiture.x + posVoiture.w - 10)];
+			SDL_GetRGB(px, fmt, &r, &g, &b);
+			if ((int)r == 49 && (int)g == 31 && (int)b == 31) { // coin avant haut = marron
+				posVoiture.y-=5;
+			}
 			posVoiture.y-=2;
 			v = IMG_Load("images/voiture2.png");
 		} else { // coin bas avant = air
